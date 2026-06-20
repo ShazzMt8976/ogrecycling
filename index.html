@@ -58,10 +58,33 @@
             font-size: 1.05rem;
             font-weight: 500;
             transition: color 0.2s;
+            display: inline-block;
+            margin-bottom: 15px;
         }
 
         .address-link:hover {
             color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 1rem;
+        }
+
+        .contact-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-link:hover {
             text-decoration: underline;
         }
 
@@ -146,7 +169,7 @@
         /* Action Buttons */
         .cta-group {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 15px;
             margin-top: 20px;
         }
@@ -167,13 +190,28 @@
             background-color: var(--primary-dark);
         }
 
-        @media (max-width: 480px) {
-            .grid {
+        .btn.secondary {
+            background-color: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn.secondary:hover {
+            background-color: #f0fdf4;
+        }
+
+        @media (max-width: 580px) {
+            .grid, .cta-group {
                 grid-template-columns: 1fr;
             }
             .container {
                 padding: 20px;
                 margin: 10px auto;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
             }
         }
     </style>
@@ -185,20 +223,29 @@
             <h1>OG RECYCLING LLC</h1>
             <!-- Links directly to Google Maps for mobile navigation ease -->
             <a href="https://maps.google.com/?q=26423+S+Arizona+Ave+Chandler+AZ+85248" target="_blank" class="address-link">
-                📍 26423 S Arizona Ave<br>Chandler, AZ 85248
+                📍 26423 S Arizona Ave<br>Chandler, AZ 85248[cite: 1]
             </a>
+            
+            <!-- NEW: Embedded Actionable Contact Panel -->
+            <div class="contact-info">
+                <a href="tel:6025664947" class="contact-link">📞 602-555-8888</a>
+                <a href="mailto:ogrecycling1@gmail.com" class="contact-link">✉️ ogrecycling1@gmail.com</a>
+            </div>
         </header>
 
         <!-- ACCEPTED MATERIALS -->
         <section>
             <h2>📋 Accepted Materials</h2>
             <div class="grid">
-                <div class="badge">Scrap Metal</div>
-                <div class="badge">Automotive Scrap</div>
-                <div class="badge">Brass & Bronze Scrap</div>
-                <div class="badge">E-Scrap & Components</div>
-                <div class="badge">Stainless Steel Scrap</div>
-                <div class="badge">Other Metals Scrap</div>
+                <div class="badge">Brass</div>
+                <div class="badge">Metal</div>
+                <div class="badge">Batteries</div>
+                <div class="badge">Clean Copper</div>
+                <div class="badge">Electric Motors</div>
+                <div class="badge">A/C Compressors</div>
+		<div class="badge">Car Radiators</div>
+		<div class="badge">House A/C Units</div>
+		<div class="badge">Insulated Copper Wire</div>
             </div>
         </section>
 
@@ -226,9 +273,10 @@
             </table>
         </section>
 
-        <!-- NAVIGATION QUICK ACTION -->
+        <!-- QUICK ACTIONS PANEL -->
         <div class="cta-group">
-            <a href="https://maps.google.com/?q=26423+S+Arizona+Ave+Chandler+AZ+85248" target="_blank" class="btn">Get Driving Directions</a>
+            <a href="tel:6025664947" class="btn">Call Business Now</a>
+            <a href="https://maps.google.com/?q=26423+S+Arizona+Ave+Chandler+AZ+85248" target="_blank" class="btn secondary">Get Driving Directions</a>
         </div>
     </div>
 
